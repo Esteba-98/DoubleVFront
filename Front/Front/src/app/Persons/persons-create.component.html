@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="col-md-12">
+        <form #form="ngForm" (ngSubmit)="saveElement(form)">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Id</label>
+                <input type="number" [(ngModel)]="mainObject.idPersona" name="idPersona" ngModel class="form-control" aria-describedby="emailHelp" readonly>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nombres</label>
+                <input type="text" [(ngModel)]="mainObject.nombres" name="nombres" ngModel class="form-control" aria-describedby="emailHelp">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Apellidos</label>
+                <input type="text" [(ngModel)]="mainObject.apellidos" name="apellidos" ngModel class="form-control" aria-describedby="emailHelp">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">NumeroIdentificacion</label>
+                <input type="text" [(ngModel)]="mainObject.numeroIdentificacion" name="numeroIdentificacion" ngModel class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Email</label>
+                <input type="text" [(ngModel)]="mainObject.email" name="email" ngModel class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">tipo Identificacion</label>
+                <input type="text" [(ngModel)]="mainObject.tipoIdentificacion" name="tipoIdentificacion" ngModel class="form-control">
+            </div>
+            <button *ngIf="!edit" type="submit" class="btn btn-primary">Registrar</button>
+            <button *ngIf="edit" type="submit" class="btn btn-primary">Actualizar</button>
+        </form>
+    </div>
+</div>

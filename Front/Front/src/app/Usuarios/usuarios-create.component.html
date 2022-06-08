@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="col-md-12">
+        <form #form="ngForm" (ngSubmit)="saveElement(form)">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Id</label>
+                <input type="number" [(ngModel)]="mainObject.idUsuario" name="idUsuario" ngModel class="form-control" aria-describedby="emailHelp" readonly>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nombre Usuario</label>
+                <input type="text" [(ngModel)]="mainObject.nombreUsuario" name="nombreUsuario" ngModel class="form-control" aria-describedby="emailHelp">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Password</label>
+                <input type="password" [(ngModel)]="mainObject.password" name="password" ngModel class="form-control" aria-describedby="emailHelp">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Fecha Creacion</label>
+                <input type="text" [(ngModel)]="mainObject.fechaCreacion" name="FechaCreacion" ngModel class="form-control">
+            </div>
+            <button *ngIf="!edit" type="submit" class="btn btn-primary">Registrar</button>
+            <button *ngIf="edit" type="submit" class="btn btn-primary">Actualizar</button>
+        </form>
+    </div>
+</div>

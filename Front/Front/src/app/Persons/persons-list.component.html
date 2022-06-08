@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="col-md-12">
+        <h2>Lista de Personas</h2>
+        <button type="button" class="btn btn-primary mr-2 my-2" routerLink="/">Inicio </button>
+        <button type="button" class="btn btn-primary mr-2 my-2" routerLink="/Persons/crear">Crear Persona </button>
+    </div>
+</div>
+<div class="container">
+    <div class="col-md-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombres</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Numero Identificacion</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Tipo Identificacion</th>
+                    <th scope="col">Fecha Creacion</th>
+                    <th scope="col">Tipo Numero Identificacion</th>
+                    <th scope="col">NombreCompleto</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let person of personsList">
+                    <th scope="row">{{person.idPersona}}</th>
+                    <td>{{person.nombres}}</td>
+                    <td>{{person.apellidos}}</td>
+                    <td>{{person.numeroIdentificacion}}</td>
+                    <td>{{person.email}}</td>
+                    <td>{{person.tipoIdentificacion}}</td>
+                    <td>{{person.fechaCreacion}}</td>
+                    <td>{{person.tipoNumeroIdentificacion}}</td>
+                    <td>{{person.nombreCompleto}}</td>
+                    <td><button type="button" class="btn btn-primary mr-2 my-2" (click)="edit(person.idPersona)">Editar</button></td>
+                    <td><button type="button" class="btn btn-primary mr-2 my-2" (click)="delete(person.idPersona)">Eliminar</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
